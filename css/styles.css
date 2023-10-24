@@ -13,7 +13,7 @@
     font-size: 1.25rem;
     background-color: darkcyan;
     padding-left: 10px;
-    border: 2px ridge black;
+    border: 5px ridge black;
     border-bottom: none;
 }
 
@@ -22,7 +22,7 @@
     text-align: end;
     background-color: darkcyan;
     padding-right: 10px;
-    border: 2px ridge black;
+    border: 5px ridge black;
     border-top: none;
     border-bottom: none;
 }
@@ -32,7 +32,7 @@
     width: 45%;
     margin: auto;
     background-color: burlywood;
-    border: 2px ridge black;
+    border: 5px ridge black;
 }
 
 .num-btns {
