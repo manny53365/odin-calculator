@@ -35,9 +35,7 @@ const calculate = () => {
     operator = null
 }
 
-const round = (total) => {
-    return Math.round(total * 1000) / 1000;
-}
+const round = (total) => Math.round(total * 1000) / 1000;
 
 function clear() {
     currentOperationScreen.textContent = '0';
