@@ -24,6 +24,7 @@
     padding-right: 10px;
     border: 2px ridge black;
     border-top: none;
+    border-bottom: none;
 }
 
 .button-container {
