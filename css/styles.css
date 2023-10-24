@@ -3,22 +3,35 @@
     padding: 0;
 }
 
-.screen-current {
-    font-size: 4rem;
-    text-align: end;
-}
-
 .container {
     display: flex;
     flex-direction: column;
-    width: 50%;
     margin-top: 20px;
+}
+
+.screen-last {
+    font-size: 1.25rem;
+    background-color: darkcyan;
+    padding-left: 10px;
+    border: 2px ridge black;
+    border-bottom: none;
+}
+
+.screen-current {
+    font-size: 4rem;
+    text-align: end;
+    background-color: darkcyan;
+    padding-right: 10px;
+    border: 2px ridge black;
+    border-top: none;
 }
 
 .button-container {
     display: flex;
-    width: 80%;
+    width: 45%;
     margin: auto;
+    background-color: burlywood;
+    border: 2px ridge black;
 }
 
 .num-btns {
@@ -26,6 +39,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     flex: 1;
+    margin: 10px;
 }
 
 .operator-btns {
@@ -34,9 +48,15 @@
     justify-content: space-evenly;
     width: 10%;
     padding-left: 5px;
+    margin: 10px;
 }
 
 .btn-warning, .btn-danger {
     margin-bottom: 10px;
     width: 100%;
+}
+
+#currentOperationScreen, #lastOperationScreen {
+    width: 45%;
+    margin: auto;
 }
