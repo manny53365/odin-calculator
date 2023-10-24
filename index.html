@@ -14,7 +14,8 @@
     <body>
         <div class="container">
             <div class="result">
-                <h2>0</h2>
+                <div class="screen-last" id="lastOperationScreen"></div>
+                <div class="screen-current" id="currentOperationScreen">0</div>
             </div>
             <div class="button-container">
                 <div class="num-btns">
@@ -28,7 +29,8 @@
                     <button type="button" class="btn btn-secondary">2</button>
                     <button type="button" class="btn btn-secondary">1</button>
                     <button type="button" class="btn btn-secondary zero">0</button>
-                    <button type="button" class="btn btn-light">=</button>
+                    <button type="button" class="btn btn-secondary" id="decimalBtn">.</button>
+                    <button type="button" class="btn btn-light" id="eqlBtn">=</button>
                 </div>
                 <div class="operator-btns">
                     <button type="button" class="btn btn-warning">÷</button>
@@ -36,7 +38,8 @@
                     <button type="button" class="btn btn-warning">-</button>
                     <button type="button" class="btn btn-warning">+</button>
                     <div class="clear-btn">
-                        <button type="button" class="btn btn-danger">Clear</button>
+                        <button type="button" class="btn btn-danger" id="clearBtn">Clear</button>
+                        <button type="button" class="btn btn-danger" id="deleteBtn">Delete</button>
                     </div>
                 </div>
             </div>
