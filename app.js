@@ -1,6 +1,32 @@
 //global vars section
 let firstNum, secondNum, operator = '';
 
+// mapping DOM buttons to vars
+const numberButtons = document.getElementsByClassName('btn-secondary');
+const operatorButtons = document.getElementsByClassName('btn-warning');
+
+function updateDisplay(event) {
+    const buttonValue = event.target.textContent;
+
+    const display = document.getElementById('currentOperationScreen');
+    
+    display.textContent === '0' ? display.textContent = buttonValue : display.textContent += buttonValue;
+};
+
+const convertOperator = (selectedOperator) => {
+    if (selectedOperator !== null && selectedOperator !== ""){
+
+    }
+}
+
+for (const button of numberButtons) {
+    button.addEventListener('click', updateDisplay);
+}
+
+for (const operatorButton of operatorButtons) {
+    operatorButton.addEventListener('click', convertOperator);
+};
+
 // math operations
 
 const add = (a,b) => {
