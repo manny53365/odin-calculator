@@ -62,11 +62,12 @@ const round = (number) => Math.round(number * 1000) / 1000;
 const handleKeyboardInput = (event) => {
     if (event.key >= 0 && event.key <= 9) appendNumber(event.key);
     if (event.key === '.') appendDecimal();
-    if (event.key === '=' || event.key === 'Enter') evaluate();
+    if (event.key === '=' || event.key === 'Enter') calculate();
     if (event.key === 'Backspace') deleteNumber();
     if (event.key === 'Escape') clear();
-    if (event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/');
+    if (event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/') {
         setOperation(convertOperator(event.key));
+    }
 }
 
 const convertOperator = (keyboardOperator) => {
@@ -88,6 +89,8 @@ clearButton.addEventListener('click', clear);
 equalButton.addEventListener('click', calculate);
 deleteButton.addEventListener('click', deleteNumber);
 decimalButton.addEventListener('click', appendDecimal);
+
+window.addEventListener('keydown', handleKeyboardInput);
 
 // math operations
 
