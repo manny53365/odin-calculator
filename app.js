@@ -7,6 +7,7 @@ const operatorButtons = document.getElementsByClassName('btn-warning');
 const equalButton = document.getElementById('eqlBtn');
 const clearButton = document.getElementById('clearBtn');
 const deleteButton = document.getElementById('deleteBtn');
+const decimalButton = document.getElementById('decimalBtn');
 const lastOperationScreen = document.getElementById('lastOperationScreen');
 const currentOperationScreen = document.getElementById('currentOperationScreen');
 
@@ -28,11 +29,10 @@ const clear = () => {
     operator = null
 }
 
-const appendPoint = () => {
-    if (shouldResetScreen) resetScreen();
-    if (currentOperationScreen.textContent === '');
-        currentOperationScreen.textContent = '0';
+const appendDecimal = () => {
     if (currentOperationScreen.textContent.includes('.')) return;
+    if (shouldResetScreen) resetScreen();
+    if (currentOperationScreen.textContent === '') currentOperationScreen.textContent = '0';
     currentOperationScreen.textContent += '.';
 }
 
@@ -61,7 +61,7 @@ const round = (number) => Math.round(number * 1000) / 1000;
 
 const handleKeyboardInput = (event) => {
     if (event.key >= 0 && event.key <= 9) appendNumber(event.key);
-    if (event.key === '.') appendPoint();
+    if (event.key === '.') appendDecimal();
     if (event.key === '=' || event.key === 'Enter') evaluate();
     if (event.key === 'Backspace') deleteNumber();
     if (event.key === 'Escape') clear();
@@ -86,6 +86,8 @@ for (const operatorButton of operatorButtons) {
 
 clearButton.addEventListener('click', clear);
 equalButton.addEventListener('click', calculate);
+deleteButton.addEventListener('click', deleteNumber);
+decimalButton.addEventListener('click', appendDecimal);
 
 // math operations
 
