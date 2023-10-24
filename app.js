@@ -32,7 +32,8 @@ const operate = (firstNum, operator, secondNum) => {
         case "x" || "*":
             return multiply(num1, num2);
         case "/" || '÷':
-            return divide(num1, num2);
+            // This check will prevent a divide by 0 error
+            return num2 !== 0 ? divide(num1, num2): null
         default:
             return null;
     }
