@@ -19,3 +19,22 @@ const divide = (a,b) => {
     return a / b;
 }
 
+// This function will parse the parameters passed in and call the add, subtract, multiply or divide function
+const operate = (firstNum, operator, secondNum) => {
+    let num1 = Number(firstNum);
+    let num2 = Number(secondNum);
+
+    switch (operator) {
+        case "+":
+            return add(num1, num2);
+        case "-":
+            return subtract(num1,num2);
+        case "x" || "*":
+            return multiply(num1, num2);
+        case "/" || '÷':
+            // This check will prevent a divide by 0 error
+            return num2 !== 0 ? divide(num1, num2): null
+        default:
+            return null;
+    }
+}
