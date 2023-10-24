@@ -1,4 +1,4 @@
-//global vars section
+// global vars section
 let firstNum, secondNum, operator = '', shouldResetScreen = false;
 
 // mapping DOM buttons to vars
@@ -6,7 +6,7 @@ const numberButtons = document.getElementsByClassName('btn-secondary');
 const operatorButtons = document.getElementsByClassName('btn-warning');
 const equalButton = document.getElementById('eqlBtn');
 const clearButton = document.getElementById('clearBtn');
-const deleteButton = document.getElementById('deleteBtn')
+const deleteButton = document.getElementById('deleteBtn');
 const lastOperationScreen = document.getElementById('lastOperationScreen');
 const currentOperationScreen = document.getElementById('currentOperationScreen');
 
@@ -39,17 +39,17 @@ const appendPoint = () => {
 const deleteNumber = () => currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0, -1);
 
 const setOperation = (selectedOperator) => {
-    if (selectedOperator !== null) calculate();
     firstNum = currentOperationScreen.textContent;
     operator = selectedOperator;
     lastOperationScreen.textContent = `${firstNum} ${operator}`;
     shouldResetScreen = true;
+    if (operator !== null) calculate();
 }
 
-const calculate = () =>  {
+const calculate = () => {
     if (operator === null || shouldResetScreen) return;
     if (operator === '÷' && currentOperationScreen.textContent === '0') alert("You can't divide by 0!");
-    secondNum = currentOperationScreen.textContent
+    secondNum = currentOperationScreen.textContent;
     currentOperationScreen.textContent = round(
         operate(firstNum, operator, secondNum)
     );
@@ -113,4 +113,3 @@ const operate = (firstNum, operator, secondNum) => {
             return null;
     }
 }
-
