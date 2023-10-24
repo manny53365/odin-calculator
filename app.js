@@ -19,3 +19,6 @@ const divide = (a,b) => {
     return a / b;
 }
 
+const operate = (firstNum, operator, secondNum) => {
+    // add switch statement
+}
