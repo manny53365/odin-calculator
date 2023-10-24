@@ -1,5 +1,5 @@
 //global vars section
-
+let firstNum, secondNum, operator = '';
 
 // math operations
 
