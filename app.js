@@ -19,6 +19,7 @@ const divide = (a,b) => {
     return a / b;
 }
 
+// This function will parse the parameters passed in and call the add, subtract, multiply or divide function
 const operate = (firstNum, operator, secondNum) => {
     let num1 = Number(firstNum);
     let num2 = Number(secondNum);
