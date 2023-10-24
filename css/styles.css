@@ -25,10 +25,6 @@
     flex: 1;
 }
 
-.zero {
-    grid-column: span 2;
-}
-
 .operator-btns {
     display: flex;
     flex-direction: column;
@@ -37,6 +33,6 @@
     padding-left: 5px;
 }
 
-.btn-warning {
+.btn-warning, .btn-danger {
     margin-bottom: 10px;
 }
