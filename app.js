@@ -38,13 +38,12 @@ const appendDecimal = () => {
 
 const deleteNumber = () => currentOperationScreen.textContent = currentOperationScreen.textContent.toString().slice(0, -1);
 
-
 const setOperation = (selectedOperator) => {
     if (firstNum && operator && !shouldResetScreen) {
         secondNum = currentOperationScreen.textContent;
         let result = operate(firstNum, operator, secondNum);
         currentOperationScreen.textContent = result;
-        lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} =`;
+        lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} = ${result}`;
         firstNum = result;
         shouldResetScreen = true;
     } else {
@@ -53,18 +52,18 @@ const setOperation = (selectedOperator) => {
     }
     operator = selectedOperator;
     lastOperationScreen.textContent = `${firstNum} ${operator}`;
-};
+}
 
 const calculate = () => {
-    if (!firstNum || !operator) return;
+    if (operator === null || shouldResetScreen) return;
+    if (operator === '÷' && currentOperationScreen.textContent === '0') alert("You can't divide by 0!");
     secondNum = currentOperationScreen.textContent;
-    let result = operate(firstNum, operator, secondNum);
-    currentOperationScreen.textContent = result;
+    currentOperationScreen.textContent = round(
+        operate(firstNum, operator, secondNum)
+    );
     lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} =`;
-    firstNum = result;
-    operator = '';
-    shouldResetScreen = true;
-};
+    operator = null;
+}
 
 const round = (number) => Math.round(number * 1000) / 1000;
 
