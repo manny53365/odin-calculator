@@ -43,7 +43,7 @@ const setOperation = (selectedOperator) => {
         secondNum = currentOperationScreen.textContent;
         let result = operate(firstNum, operator, secondNum);
         currentOperationScreen.textContent = result;
-        lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} = ${result}`;
+        lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} =`;
         firstNum = result;
         shouldResetScreen = true;
     } else {
@@ -52,18 +52,19 @@ const setOperation = (selectedOperator) => {
     }
     operator = selectedOperator;
     lastOperationScreen.textContent = `${firstNum} ${operator}`;
-}
+};
 
 const calculate = () => {
-    if (operator === null || shouldResetScreen) return;
-    if (operator === '÷' && currentOperationScreen.textContent === '0') alert("You can't divide by 0!");
+    if (!firstNum || !operator) return;
     secondNum = currentOperationScreen.textContent;
-    currentOperationScreen.textContent = round(
-        operate(firstNum, operator, secondNum)
-    );
+    let result = operate(firstNum, operator, secondNum);
+    currentOperationScreen.textContent = result;
     lastOperationScreen.textContent = `${firstNum} ${operator} ${secondNum} =`;
-    operator = null;
-}
+    firstNum = result;
+    operator = '';
+    shouldResetScreen = true;
+};
+
 
 const round = (number) => Math.round(number * 1000) / 1000;
 
